@@ -1,0 +1,173 @@
+// ILP-010 (Prof. Dr. Silvio do Lago Pereira)
+
+//------------------------------------------------------------
+// Exemplo 1
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+   int *p;
+   p = malloc(sizeof(int));
+   *p = 5;
+   printf("%d\n",*p);
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 2
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+   int *p = malloc(sizeof(int));
+   *p = 5;
+   printf("%d\n",*p);
+   free(p);
+   p = NULL;   
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 3
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void leia(int v[],int n) {
+   for(int i=0; i<n; i++) {
+      printf("%do numero? ",i+1);
+      scanf("%f",&v[i]);
+   }
+}
+
+float media(float v[], int n) {
+   float s = 0;
+   for(int i=0; i<n; i++) 
+      s += v[i];
+   return s/n;
+}
+
+int main(void) {
+   int n;
+   printf("Tamanho da sequencia? ");
+   scanf("%d",&n);
+   float *v = malloc(n*sizeof(float)); // cria vetor!
+   leia(v,n);
+   printf("Media = %.2f\n",media(v,n));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercicio 1
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+   int v[5] = {12,39,61,75,99};
+   int w[4] = {28,40,55,81};
+   int *p = merge(v,5,w,4);
+   for(int i=0; i<9; i++) printf("%d\n",p[i]);
+   free(p);
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 4
+//------------------------------------------------------------
+
+typedef int Item;
+
+typedef struct no {
+   Item item;
+   struct no *prox;
+} *Lista;
+
+//------------------------------------------------------------
+// Exemplo 5
+//------------------------------------------------------------
+
+Lista no(Item x, Lista p) {
+   Lista n = malloc(sizeof(struct no));
+   n->item = x;
+   n->prox = p;
+   return n;
+}
+
+//------------------------------------------------------------
+// Exemplo 7
+//------------------------------------------------------------
+
+void exibe(Lista L) {
+   while( L != NULL ) {
+      printf("%d\n",L->item);
+      L = L->prox;
+   }
+}
+
+//------------------------------------------------------------
+// Exercicio 2
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int Item;
+
+typedef struct no {
+   Item item;
+   struct no *prox;
+} *Lista;
+
+
+int main(void) {
+   Lista I = no(3,no(1,no(5,NULL)));
+   exibe(I);
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 8
+//------------------------------------------------------------
+
+int tamanho(Lista L) {
+   int t = 0;
+   while( L ) {
+      t++;
+      L = L->prox;
+   }
+   return t; 
+}
+
+//------------------------------------------------------------
+// Exercicio 4
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(void) {
+   Lista I = no(3,no(1,no(5,NULL)));
+   exibe(I);
+   printf("Tamanho = %d\n",tamanho(I));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 9
+//------------------------------------------------------------
+
+void destroi(Lista *L) {
+   while( *L ) {
+      Lista n = *L;
+      *L = n->prox;
+      free(n);
+   }
+}

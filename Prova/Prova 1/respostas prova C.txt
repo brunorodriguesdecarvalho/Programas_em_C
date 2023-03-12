@@ -1,0 +1,8 @@
+1 - A (acertei) 0,5
+2 - B (errei)
+3 - B (errei)
+4 - A (errei)
+5 - C (acertei) 0,5
+6 - D (errei)
+7 - A (acertei) 0,5
+

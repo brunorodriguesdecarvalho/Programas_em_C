@@ -1,0 +1,129 @@
+// ILP-010 (Prof. Dr. Silvio do Lago Pereira)
+
+//------------------------------------------------------------
+// Exercício 1
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+int fat(int n) {
+   if( n==0 ) return 1;
+   return n*fat(n-1);
+}
+
+int main(void) {
+   int n;
+   printf("Num? ");
+   scanf("%d",&n);
+   printf("Fat = %d\n",fat(n));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 2
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+float pot(float x, int n) {
+}
+
+int main(void) {
+   float x;
+   int n;
+   printf("Base e expoente? ");
+   scanf("%f %d",&x,&n);
+   printf("Pot = %.1f\n",pot(x,n));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 3
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+int termial(int n) {
+}
+
+int main(void) {
+   int n;
+   printf("Num? ");
+   scanf("%d",&n);
+   printf("Termial = %d\n",termial(n));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 4
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+float h(int n) {
+}
+
+int main(void) {
+   int n;
+   printf("Num? ");
+   scanf("%d",&n);
+   printf("Harmonica = %.2f\n",h(n));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 5
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+void cr(int n) {
+}
+
+int main(void) {
+   int n;
+   printf("Num? ");
+   scanf("%d",&n);
+   cr(n);
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 6
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+void cp(int n) {
+}
+
+int main(void) {
+   int n;
+   printf("Num? ");
+   scanf("%d",&n);
+   cp(n);
+   return 0;
+}
+
+
+//------------------------------------------------------------
+// Exercício 7
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+void binario(int n) {
+}
+
+int main(void) {
+   int n;
+   printf("Num? ");
+   scanf("%d",&n);
+   binario(n);
+   return 0;
+}
+
+
+
+
+

@@ -1,0 +1,17 @@
+// ILP-010 (Prof. Dr. Silvio do Lago Pereira)
+
+//------------------------------------------------------------
+// Exemplo 2
+//------------------------------------------------------------
+
+// eco.c
+
+#include <stdio.h>
+
+int main(int argc,char *argv[]) {
+   for(int i=1; i<argc; i++) puts(argv[i]);
+   return 0;
+}
+
+
+

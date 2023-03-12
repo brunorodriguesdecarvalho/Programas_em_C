@@ -1,0 +1,211 @@
+// ILP-010 (Prof. Dr. Silvio do Lago Pereira)
+
+//------------------------------------------------------------
+// Exemplo 1 
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+#define PI 3.14
+
+int main(void) {
+   printf("PI = %.4f\n",PI);   // PI = 3.1400
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 1 
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+programa
+inicio
+   diga("Oi!");
+fim
+
+//------------------------------------------------------------
+// Exercício 2 
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+int main(void) {
+   char v;
+   printf("Inteiro minimo = %+d\n",MIN_INT);
+   printf("Inteiro maximo = %+d\n",MAX_INT);
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 2 
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+#define par(n) ((n)%2==0)
+
+int main(void) {
+   int a;
+   printf("Numero? ");
+   scanf("%d",&a);
+   puts(par(a) ? "Par" :  "Impar");
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 3 
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+#define quadrado(n) n*n
+
+int main(void) {
+   printf("%d\n",quadrado(2)); // 4 (certo!)
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 3 
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+#define maiuscula(c) ... // complete essa definição!
+
+int main(void) {
+   char x;
+   printf("Caractere? ");
+   scanf("%c",&x);
+   printf("Maiuscula: %s\n",maiuscula(x) ? "sim" : "nao");
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exercício 4 
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include "portugues.h"
+
+programa
+inicio
+   diga("Oi!");
+fim
+
+//------------------------------------------------------------
+// Exemplo 9
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+void g(void) { puts("G"); }
+
+void f(void) { puts("F1"); g(); puts("F2"); }
+
+int main(void) { puts("M1"); f(); puts("M2"); return 0; }
+
+//------------------------------------------------------------
+// Exemplo 10
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+void f(void); // declaração de f()
+void g(void); // declaração de g()
+
+int main(void) { puts("M1"); f(); puts("M2"); return 0; }
+
+void f(void) { puts("F1"); g(); puts("F2"); }
+
+void g(void) { puts("G"); }
+
+//------------------------------------------------------------
+// Exemplo 13
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+double potencia(double x,unsigned int n) {
+   double p = 1;
+   for(unsigned int i=1; i<=n; i++) p *= x;
+   return p;    
+}
+
+int main(void) {
+   printf("%.1f\n",potencia(2,5));  // 32.0
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 14
+//------------------------------------------------------------
+
+#include <stdio.h>
+
+float media(float a, float b) { return (a+b)/2; }
+
+float maior(float a, float b) { return (a>b) ? a : b; }
+
+int main(void) {
+   float p1, p2, t1, t2;
+   printf("Provas? ");
+   scanf("%f %f",&p1,&p2);
+   printf("Trabalhos? ");
+   scanf("%f %f",&t1,&t2);
+   printf("Media = %.1f\n",media(maior(p1,p2),maior(t1,t2)));
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 15
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <conio.h>
+#include <time.h>
+
+void sequencia(void) {
+  auto int n=0;  
+  printf("%d,",n++);
+}
+
+int main(void) {
+   while( !_kbhit() ) {
+      sequencia();
+      _sleep(1);
+   }
+   return 0;
+}
+
+//------------------------------------------------------------
+// Exemplo 16
+//------------------------------------------------------------
+
+#include <stdio.h>
+#include <conio.h>
+#include <time.h>
+
+int npa(void) {
+   static unsigned s=1234;
+   auto unsigned n=s%100;
+   s += s/10;
+   return n;
+}
+
+int main(void) {
+   while( !_kbhit() ) {
+      printf("%d\n",npa()); 
+      _sleep(1);
+   }
+   return 0;
+}
+
+
+
+
+
+
+
+

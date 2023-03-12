@@ -1,0 +1,7 @@
+Resposta Exercício 2
+
+Pergunta: Qual é o erro no programa a seguir?
+#include <stdio.h>
+int main(void) { printf("%d\n",0678); return 0; }
+
+Resposta: O número 0678 é compreendido como octal, o que está errado. Outra coisa é que a representação do 0678 está equivocada. Dentro da instrução printf, o %d representa números decimais e não octal. O correto é atribuir o valor 678 a uma variável e colocar esse nome no espaço onde está 0678. 
